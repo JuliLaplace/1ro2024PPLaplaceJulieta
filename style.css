@@ -67,6 +67,18 @@ input[type="number"]{
 	margin:8px 0;
 	display:inline-block;
 }
+ /*SEGUNDA PANTALLA*/
+ .contenedor-id, .contenedor-nombre, .contenedor-apellido, .contenedor-fechaNacimiento, .contenedor-tipo, .contenedor-botones {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+ }
+ label{
+    margin-right: 5px;
+ }
+
+
 
 /*BOTONES*/
 
@@ -91,6 +103,7 @@ td{
     color: aliceblue;
     border-radius: 10px;
     padding: 5px;
+    margin: 5px;
     cursor: pointer;
 }
 
