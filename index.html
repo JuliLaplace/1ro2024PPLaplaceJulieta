@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PP Labo III</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>PP Laboratorio III - Julieta Laplace</h1>
+
+            <div class="contenedor-datos" id="contDatos">
+                <h2>Form Listado</h2>
+                <div class="contenedor-filtros">
+                    <label for="filtro">Filtrar por</label>
+                    <select name="filtro" id="filtro">
+                        <option value="todos" selected>Todos</option>
+                        <option value="ciudadanos">Ciudadanos</option>
+                        <option value="extranjeros">Extranjeros</option>
+                    </select>
+                </div>
+                <div class="contenedor-promedio">
+                    <label for="edadPromedio">Calcular Edad Promedio</label>
+                    <input type="text" name="edadPromedio" readonly id="label-promedio">
+                    <button class="btn" id="btnCalcularPromedio">Calcular</button>
+                </div>
+                
+                <div class="contenedor-checkbox">
+                    <p>Mostrar Columnas:</p>
+                    <input type="checkbox" name="" id="idCb" checked value="0"><label for="idCb"  >ID</label>
+                    <input type="checkbox" name="" id="nombreCb" checked value="1"><label for="nombreCb" >Nombre</label>
+                    <input type="checkbox" name="" id="apellidoCb" checked value="2"><label for="apellidoCb" >Apellido</label>
+                    <input type="checkbox" name="" id="fechaNacimientoCb" checked value="3"> <label for="fechaNacimientoCb" >Fecha Nacimiento</label>
+                    <input type="checkbox" name="" id="dniCb" checked value="4"><label for="dniCb" >DNI</label>
+                    <input type="checkbox" name="" id="paisOrigenCb" checked value="5"><label for="paisOrigenCb" >Pais Origen</label>
+                </div>
+                <div class="tabla">
+                    <table id="tabla">
+                        <thead>
+                            <tr>
+                                <th><button class="btn-order">ID</button></th>
+                                <th><button class="btn-order">Nombre</button></th>
+                                <th><button class="btn-order">Apellido</button></th>
+                                <th><button class="btn-order">Fecha Nacimiento</button></th>
+                                <th><button class="btn-order">DNI</button></th>
+                                <th><button class="btn-order">Pais Origen</button></th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody">
+                        </tbody>
+                    </table>
+                    <button id="btnAgregar" class="btn" type="button">Agregar</button>
+                </div>
+                
+            </div>
+                
+                
+
+        <form action="" id="formABM" style="display: none;">
+            <h2>Formulario ABM</h2>
+            <div class="contenedor-id">
+                <label for="id">Id</label>
+                <input type="text" name="id" id="id" readonly>
+            </div>
+            <div class="contenedor-nombre">
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre" >
+            </div>
+            <div class="contenedor-apellido">
+                <label for="apellido">Apellido</label>
+                <input type="text" name="apellido" id="apellido" >
+            </div>
+            <div class="contenedor-fechaNacimiento">
+                <label for="fechaNacimiento" >Fecha Nacimiento</label>
+                <input type="number" name="fechaNacimiento" id="fechaNacimiento" >
+            </div>
+            <div class="contenedor-tipo">
+                <label for="tipo">Tipo</label>
+                <select name="tipo" id="tipo" >
+                    <option value="extranjero">Extranjero</option>
+                    <option value="ciudadano">Ciudadano</option>
+                    
+                </select>
+            </div>
+            
+            <div id="contenedor-Ciudadano" style="display: none;">
+                <label for="dni">DNI</label>
+                <input type="number" name="dni" id="dni" > <br>
+            </div>
+            <div id="contenedor-Extranjero">
+                <label for="paisOrigen" >Pais Origen</label>
+                <input type="text" name="paisOrigen" id="paisOrigen" > <br>
+            </div>
+            <div class="contenedor-botones">
+                
+                <button id="btnModificar" class="btn" id="btnModificar">Modificar</button>    
+                <button id="btnEliminar" class="btn" id="btnEliminar">Eliminar</button>
+                <input type="submit" value="Aceptar" class="btn" id="btnSubmit">
+                <input type="reset" value="Cancelar" class="btn" id="btnReset">
+            </div>
+            
+        </form>
+    </main>
+    <script src="./main.js"></script>
+</body>
+</html>
