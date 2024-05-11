@@ -85,7 +85,6 @@ function ocultarFormABM(){
     btnSubmit.style.display = "inline-block";
     tipoSelect.disabled=false;
     filtroSelect.value = "todos";
-    labelPromedio.value = 0;
 }
 
 
@@ -187,32 +186,32 @@ botonesOrden.forEach((boton, index) => {
         ordenarTabla(columna);
     });
 });
+///
+function comparador(parametro1, parametro2) {
+    const par1 = parametro1.toLowerCase();
+    const par2 = parametro2.toLowerCase();
 
-
+    if (par1 < par2) {
+        return -1;
+    } else if (par1 > par2) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+//
 function ordenarTabla(columna) {
-    const filasArray = Array.from(tbody.querySelectorAll('tr')); // Convertir las filas a un array para manipulación
+    const filasArray = Array.from(tbody.querySelectorAll('tr')); // esto me convierte en array lo que hay en las tr
 
     // ordeno las filas basadas en el contenido de la columna seleccionada y el estado de ordenamiento
     filasArray.sort((filaA, filaB) => {
         const valorA = filaA.getElementsByTagName('td')[columna].textContent.trim(); 
         const valorB = filaB.getElementsByTagName('td')[columna].textContent.trim();
-        
-        if(ordenAscendente){
-            if (valorA > valorB) { 
-                return 1;
-            } else if (valorA < valorB) { 
-                return -1;
-            } else { 
-                return 0;
-            }
-        }else{
-            if (valorA < valorB) { 
-                return 1;
-            } else if (valorA > valorB) { 
-                return -1;
-            } else { 
-                return 0;
-            }
+       
+        if (ordenAscendente) {
+            return comparador(valorA, valorB);
+        } else {
+            return comparador(valorB, valorA);
         }
         
 
